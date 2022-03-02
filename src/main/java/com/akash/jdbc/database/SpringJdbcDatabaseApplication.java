@@ -8,17 +8,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication
+// comment out the annotation whichever is needed
+//@SpringBootApplication
 @Slf4j
-public class DatabaseApplication implements CommandLineRunner {
+public class SpringJdbcDatabaseApplication implements CommandLineRunner {
 
   @Autowired
   PersonJDBCDao personJDBCDao;
 
 
   public static void main(String[] args) {
-    SpringApplication.run(DatabaseApplication.class, args);
+    SpringApplication.run(SpringJdbcDatabaseApplication.class, args);
   }
 
   /**

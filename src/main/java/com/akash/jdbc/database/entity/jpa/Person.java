@@ -4,11 +4,17 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Data
+
 // Java by default provides the default constructor if parameterized constructor is not defined
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 @Entity
 //@Table(name="person") // don't need this because table name is same as class
@@ -23,11 +29,10 @@ public class Person {
   private Date birthDate;
 
   public Person(String name, String location, Date birthDate) {
+    super();
     this.name = name;
     this.location = location;
     this.birthDate = birthDate;
   }
-// Required
-  public Person() {
-  }
+
 }
