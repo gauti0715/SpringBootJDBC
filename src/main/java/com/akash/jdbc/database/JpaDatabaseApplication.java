@@ -29,9 +29,9 @@ public class JpaDatabaseApplication implements CommandLineRunner {
    */
   @Override
   public void run(String... args) throws Exception {
-//    log.info("All users -> {}", personJDBCDao.findAll());
+    log.info("All users -> {}", personJpaRepository.findAll());
     log.info("User Id -> {}", personJpaRepository.findById(1001));
-//    log.info("Deleting 1002.Number of rows affected-> {}", personJDBCDao.deleteById(1002));
+    personJpaRepository.deleteById(1002);
     log.info("Inserting 1004 -> {}"
         , personJpaRepository.insert(Person.builder().location("Lucknow").name("Akash Gautam").birthDate(new Date())
             .build()));
