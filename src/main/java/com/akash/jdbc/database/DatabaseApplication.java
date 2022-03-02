@@ -2,12 +2,15 @@ package com.akash.jdbc.database;
 
 import com.akash.jdbc.database.dao.jdbc.PersonJDBCDao;
 import com.akash.jdbc.database.entity.Person;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.jdbc.core.RowMapper;
 
 @SpringBootApplication
 @Slf4j
@@ -15,6 +18,7 @@ public class DatabaseApplication implements CommandLineRunner {
 
   @Autowired
   PersonJDBCDao personJDBCDao;
+
 
   public static void main(String[] args) {
     SpringApplication.run(DatabaseApplication.class, args);
