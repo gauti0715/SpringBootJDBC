@@ -1,6 +1,8 @@
 package com.akash.jdbc.database;
 
 import com.akash.jdbc.database.dao.jdbc.PersonJDBCDao;
+import com.akash.jdbc.database.entity.Person;
+import java.util.Date;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -29,5 +31,10 @@ public class DatabaseApplication implements CommandLineRunner {
     log.info("All users -> {}", personJDBCDao.findAll());
     log.info("User Id -> {}", personJDBCDao.findById(1001));
     log.info("Deleting 1002.Number of rows affected-> {}", personJDBCDao.deleteById(1002));
+    log.info("Inserting 1004 -> {}"
+        , personJDBCDao.insert(Person.builder().id(1004).location("Lucknow").name("Akash Gautam").birthDate(new Date())
+            .build()));
+    log.info("Updating 1003 -> {}"
+        , personJDBCDao.update(Person.builder().id(1003).location("Ghaziabad").name("Gauti").birthDate(new Date()).build()));
   }
 }
