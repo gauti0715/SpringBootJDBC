@@ -1,6 +1,6 @@
-package com.akash.jdbc.database.dao.jdbc;
+package com.akash.jdbc.database.dao.springjdbc;
 
-import com.akash.jdbc.database.entity.Person;
+import com.akash.jdbc.database.entity.springjdbc.Person;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;

@@ -1,4 +1,4 @@
-package com.akash.jdbc.database.entity;
+package com.akash.jdbc.database.entity.springjdbc;
 
 import java.util.Date;
 import lombok.AllArgsConstructor;
