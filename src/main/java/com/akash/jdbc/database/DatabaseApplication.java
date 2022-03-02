@@ -27,5 +27,6 @@ public class DatabaseApplication implements CommandLineRunner {
   @Override
   public void run(String... args) throws Exception {
     log.info("All users -> {}", personJDBCDao.findAll());
+    log.info("User Id -> {}", personJDBCDao.findById(1001));
   }
 }

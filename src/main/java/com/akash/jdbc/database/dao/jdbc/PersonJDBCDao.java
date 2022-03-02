@@ -21,4 +21,10 @@ public class PersonJDBCDao {
     return jdbcTemplate.query("select * from person"
         , new BeanPropertyRowMapper<Person>(Person.class));// whenever we use this mapper on a particular bean, that bean should have a no arg constructor
   }
+
+  public Person findById(int id) {
+//    return jdbcTemplate.queryForObject("select * from person where id = ?",new BeanPropertyRowMapper<Person>(Person.class));
+    return jdbcTemplate.queryForObject("select * from person where id = ?", new Object[]{id}
+        , new BeanPropertyRowMapper<Person>(Person.class));// whenever we use this mapper on a particular bean, that bean should have a no arg constructor
+  }
 }
