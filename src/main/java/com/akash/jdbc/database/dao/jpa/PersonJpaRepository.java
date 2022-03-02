@@ -37,5 +37,4 @@ public class PersonJpaRepository {
     TypedQuery<Person> namedQuery = entityManager.createNamedQuery("find_all_persons",Person.class);
     return namedQuery.getResultList();
   }
-
 }
