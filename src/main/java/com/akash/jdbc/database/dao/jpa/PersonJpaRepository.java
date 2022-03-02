@@ -17,4 +17,12 @@ public class PersonJpaRepository {
   public Person findById(int id) {
     return entityManager.find(Person.class,id);
   }
+//  Merge method to update or insert
+//  No difference between the below two methods
+  public Person update(Person person) {
+    return entityManager.merge(person);
+  }
+  public Person insert(Person person) {
+    return entityManager.merge(person);
+  }
 }
